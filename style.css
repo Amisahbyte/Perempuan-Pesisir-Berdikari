@@ -1,0 +1,620 @@
+/* =========================
+   Reset ringan + variable
+   ========================= */
+:root {
+  --bg: #E0F7FA;           
+  --surface: #4A5568;       
+  --text: #0B192C;        
+  --muted:  #334E68;        
+  --primary: #FF80AB;      
+  --primary-2: #FF4081;    
+  --border: rgba(255, 128, 171, 0.25); 
+}
+
+
+* {
+  box-sizing: border-box; 
+}
+
+html,
+body {
+  height: 100%;
+  text-align: justify;
+}
+
+body {
+  margin: 0; 
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg); 
+  color: var(--text);
+  line-height: 1.6;
+}
+
+
+.container {
+  width: 92%;               
+  max-width: 980px;         
+  margin: 0 auto;
+}
+
+/* =========================
+   Header + Nav (Flexbox)
+   ========================= */
+.site-header {
+  position: static; 
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(72, 120, 218, 0.72);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-mark {
+  display: inline-grid; 
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: yellow;
+  font-weight: 800;
+}
+
+.brand-text {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: yellow;
+  font-size: 18px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: yellow;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #FFFFFF; 
+  background: #4A5568;
+}
+
+/* =========================
+   Hero
+   ========================= */
+.hero {
+  padding: 44px 0 18px;
+}
+
+.hero-inner {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.hero-copy {
+  flex: 1;
+}
+
+.hero-media {
+  flex: 1;
+}
+
+.hero h1 {
+  line-height: 1.15;
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3.2vw, 44px); /* Units - "vw" */  
+  text-align: left;
+}
+
+h3 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.hero-media img {
+  width: 100%;
+  max-width: 100%; 
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+/* =========================
+   Buttons (display + hover)
+   ========================= */
+.btn {
+  display: inline-block; 
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 650;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #0b1220;
+  border-color: transparent;
+}
+
+.btn-ghost {
+  background: #334E68;
+  color: #FFFFFF;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.small-note {
+  color: rgba(233, 238, 248, 0.7);
+  font-size: 14px;
+}
+
+/* =========================
+   Sections + Cards
+   ========================= */
+.section {
+  padding: 34px 0;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+  margin: 0 0 6px;
+  font-size: 40px;
+  text-align: center;
+}
+
+/* Pseudo element */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4A5568, var(--primary-2));
+}
+
+.section-subtitle {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+.card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+
+/* =========================
+   Product
+   ========================= */
+/* Styling khusus untuk isi kartu produk */
+.cards-produk {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.kartu-produk {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+}
+
+.kartu-produk img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.kartu-produk h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.kartu-produk p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.keunggulan {
+  list-style: none; 
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.keunggulan li {
+  margin-bottom: 6px;
+}
+
+/* Tombol Pesan Produk */
+.tombol-pesan {
+  display: block;
+  text-align: center;
+  background: var(--primary-2);
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.tombol-pesan:hover {
+  background: var(--primary);
+}
+
+/* =========================
+   Table
+   ========================= */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+  background: #fff;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.schedule-table th {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.schedule-table td {
+  color: var(--muted);
+}
+
+/* =========================
+   Form
+   ========================= */
+.signup-form {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field label {
+  display: block; 
+  margin-bottom: 6px;
+  color: var(--text);
+  font-weight: 650;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(11, 18, 32, 0.5);
+  color: var(--text);
+  outline: none;
+}
+
+/* Pseudo class: focus */
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: rgba(124, 92, 255, 0.8);
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.15);
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.form-note {
+  margin: 0;
+  color: #4A5568;
+  font-size: 14px;
+}
+
+
+/* =========================
+   Contact
+   ========================= */
+.kontak-kisi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.blok-kontak {
+  background: #fff;
+  padding: 1.3rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+
+.blok-kontak h3 {
+  color: #239b9e;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.blok-kontak p,
+.blok-kontak a {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.blok-kontak a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #0a4c6a;
+}
+
+.blok-kontak a:hover {
+  text-decoration: underline;
+}
+
+.keterangan-kecil {
+  font-size: 0.88rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+
+/* =========================
+   Peta
+   ========================= */
+.blok-kontak.peta {
+ margin: 1rem auto;  
+}
+
+.blok-kontak.peta iframe {
+  width: 100%;        
+  height: 300px;      
+  border-radius: 8px;
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  background-color: #0a4c6a; 
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  margin-top: 2.5rem;
+  border-radius: 8px 8px 0 0;
+  line-height: 1.6;
+
+  /* Efek halus saat muncul */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: munculFooter 0.8s ease-out forwards;
+}
+
+/* Animasi muncul */
+@keyframes munculFooter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer p {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #85d4a4; 
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* =========================
+   Media Query (Responsive)
+   ========================= */
+@media (max-width: 640px) {
+  .hero-inner {
+    flex-direction: column; 
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    padding: 8px 8px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr; 
+    gap: 16px; 
+  }
+
+  .card {
+    padding: 16px; 
+  }
+
+  .card img {
+    height: 160px; 
+  }
+
+  /* Jadwal */
+    .table-wrap {
+    overflow-x: visible;
+    border: none;
+    border-radius: 0;
+  }
+
+  .schedule-table {
+    min-width: 100%;
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* Sembunyikan judul kolom asli */
+  .schedule-table thead {
+    display: none;
+  }
+
+  .schedule-table tr {
+    display: block;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    padding: 12px;
+  }
+
+  .schedule-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border: none;
+    font-size: 14px;
+    text-align: right;
+  }
+
+  /* Buat label di sebelah kiri */
+  .schedule-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text);
+    text-align: venter;
+    flex: 1;
+  }
+
+  /* produk */
+  .cards-produk {
+    grid-template-columns: 1fr;
+  } 
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .cards-produk {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
